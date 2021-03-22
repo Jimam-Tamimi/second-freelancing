@@ -297,7 +297,7 @@ require '../partials/_db-connect.php';
                             <a href="/levels/gm-c.php" class="nav-link  ">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
-                                    GM  C
+                                    GM C
                                 </p>
                             </a>
                         </li>
@@ -321,7 +321,7 @@ require '../partials/_db-connect.php';
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a class="text-danger" href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a class="text-danger" href="#">Home</a></li>
                                 <li class="breadcrumb-item"><a> / Level 4</a></li>
                             </ol>
                         </div><!-- /.col -->
@@ -369,7 +369,7 @@ require '../partials/_db-connect.php';
                                         <div class="form-check">
                                             ';
                             if ($num == 2) {
-                                
+
                                 echo '                                        
                                 <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
                                 <label class="form-check-label " for="question-' . $i . '-b"> ' . $row['answer'] . '';
@@ -427,7 +427,7 @@ require '../partials/_db-connect.php';
 
                     ?>
                 </div>
-                <div style="display:none" id="visual"  class="row">
+                <div style="display:none" id="visual" class="row">
                     <?php
                     $sql = "SELECT * FROM level_4 WHERE `type` = 'visual'  ORDER BY rand()";
                     $result = mysqli_query($conn, $sql);
@@ -450,12 +450,12 @@ require '../partials/_db-connect.php';
                                                 ';
                             if ($num == 1) {
                                 echo '                                        
-                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
+                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-a">
                                                     <label class="form-check-label " for="question-' . $i . '-a"> ' . $row['answer'] . '';
                             } else {
                                 $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                    <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
+                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-a">
                                                     <label class="form-check-label" for="question-' . $i . '-a"> ' . $wAns . '';
                             }
                             echo '
@@ -466,14 +466,14 @@ require '../partials/_db-connect.php';
                                         <div class="form-check">
                                             ';
                             if ($num == 2) {
-                                
+
                                 echo '                                        
-                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                <input class="form-check-input rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-b">
                                 <label class="form-check-label " for="question-' . $i . '-b"> ' . $row['answer'] . '';
                             } else {
                                 $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-b">
                                                 <label class="form-check-label" for="question-' . $i . '-b"> ' . $wAns . '';
                             }
                             echo '                                        </label>
@@ -486,12 +486,12 @@ require '../partials/_db-connect.php';
                                             ';
                             if ($num == 3) {
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-c">
                                                 <label class="form-check-label " for="question-' . $i . '-c"> ' . $row['answer'] . '';
                             } else {
                                 $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-c">
                                                 <label class="form-check-label" for="question-' . $i . '-c"> ' . $wAns . '';
                             }
                             echo '                                        </label>
@@ -502,12 +502,12 @@ require '../partials/_db-connect.php';
                                             ';
                             if ($num == 4) {
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-d">
                                                 <label class="form-check-label " for="question-' . $i . '-d"> ' . $row['answer'] . '';
                             } else {
                                 $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-d">
                                                 <label class="form-check-label" for="question-' . $i . '-d"> ' . $wAns . '';
                             }
                             echo '                                        </label>
@@ -524,7 +524,7 @@ require '../partials/_db-connect.php';
 
                     ?>
                 </div>
-                <div style="display:none" id="mul-div"  class="row">
+                <div style="display:none" id="mul-div" class="row">
                     <?php
                     $sql = "SELECT * FROM level_4 WHERE `type` = 'mul-div'  ORDER BY rand()";
                     $result = mysqli_query($conn, $sql);
@@ -547,12 +547,12 @@ require '../partials/_db-connect.php';
                                                 ';
                             if ($num == 1) {
                                 echo '                                        
-                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
+                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-a">
                                                     <label class="form-check-label " for="question-' . $i . '-a"> ' . $row['answer'] . '';
                             } else {
                                 $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                    <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
+                                                    <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-a">
                                                     <label class="form-check-label" for="question-' . $i . '-a"> ' . $wAns . '';
                             }
                             echo '
@@ -563,14 +563,14 @@ require '../partials/_db-connect.php';
                                         <div class="form-check">
                                             ';
                             if ($num == 2) {
-                                
+
                                 echo '                                        
-                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-b">
                                 <label class="form-check-label " for="question-' . $i . '-b"> ' . $row['answer'] . '';
                             } else {
                                 $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                                <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-b">
                                                 <label class="form-check-label" for="question-' . $i . '-b"> ' . $wAns . '';
                             }
                             echo '                                        </label>
@@ -583,12 +583,12 @@ require '../partials/_db-connect.php';
                                             ';
                             if ($num == 3) {
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-c">
                                                 <label class="form-check-label " for="question-' . $i . '-c"> ' . $row['answer'] . '';
                             } else {
                                 $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
+                                                <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-c">
                                                 <label class="form-check-label" for="question-' . $i . '-c"> ' . $wAns . '';
                             }
                             echo '                                        </label>
@@ -599,12 +599,12 @@ require '../partials/_db-connect.php';
                                             ';
                             if ($num == 4) {
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-d">
                                                 <label class="form-check-label " for="question-' . $i . '-d"> ' . $row['answer'] . '';
                             } else {
                                 $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
+                                                <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-d">
                                                 <label class="form-check-label" for="question-' . $i . '-d"> ' . $wAns . '';
                             }
                             echo '                                        </label>
@@ -650,6 +650,11 @@ require '../partials/_db-connect.php';
                 <span id="the-time-second">00 S</span>
 
             </div>
+
+            <div class="q-changer" id="start-next-one" style="transform:scale(0); transition:all .5s; width: 100%; height:100%; top:0; left:0; position: fixed; display:flex; justify-content: center;  align-items: center;">
+                    <button class="btn btn-danger btn-lg ">Start Next Question</button>
+                </div>
+            
             <script src="../js/jquery.min.js"></script>
 
 
@@ -658,7 +663,7 @@ require '../partials/_db-connect.php';
                 let visualTab = document.getElementById('nav-visual-tab')
                 let mulDivTab = document.getElementById('nav-mul-div-tab')
                 let resultTab = document.getElementById('nav-result-tab')
-                
+
                 let abacusDiv = document.getElementById('nav-abacus')
                 let visualDiv = document.getElementById('nav-visual')
                 let mulDivDiv = document.getElementById('nav-mul-div')
@@ -726,6 +731,56 @@ require '../partials/_db-connect.php';
             </script>
 
             <script>
+                function waitQuestion(index) {
+                    let nxtOne = document.getElementById('start-next-one')
+                    let second = 15
+
+                    let myInterval2 = setInterval(() => {
+                        second -= 1
+                        countMinute.innerHTML = '00 M &nbsp  '
+                        countSecond.innerHTML = second + '&nbsp  S '
+
+                    }, 1000);
+                    if (index == 1) {
+
+                        nxtOne.style.transform = 'scale(1)'
+                        nxtOne.addEventListener('click', () => {
+                            nxtOne.style.transform = 'scale(0)'
+                            clearInterval(myInterval2)
+
+                            vis()
+                            return ''
+                        })
+
+                        setTimeout(() => {
+                            nxtOne.style.transform = 'scale(0)'
+
+                            clearInterval(myInterval2)
+                            vis()
+                        }, 15000);
+                    }
+                    if (index == 2) {
+
+                        nxtOne.style.transform = 'scale(1)'
+                        nxtOne.addEventListener('click', () => {
+                            nxtOne.style.transform = 'scale(0)'
+                            clearInterval(myInterval2)
+
+                            mul()
+                            return ''
+                        })
+
+                        setTimeout(() => {
+                            nxtOne.style.transform = 'scale(0)'
+
+                            clearInterval(myInterval2)
+                            mul()
+                            return ''
+                        }, 15000);
+                    }
+                }
+
+
                 document.getElementById('answers').style.display = 'none'
                 let abacus = document.getElementById('abacus')
                 let visual = document.getElementById('visual')
@@ -741,8 +796,8 @@ require '../partials/_db-connect.php';
                 function ab() {
 
 
-                    let minute = 4
-                    let second = 59
+                    let minute = 2
+                    let second = 3
 
                     countMinute.innerHTML = minute + ' M &nbsp '
                     countSecond.innerHTML = second + '&nbsp S'
@@ -752,7 +807,7 @@ require '../partials/_db-connect.php';
                         countMinute.innerHTML = minute + ' M &nbsp  '
                         countSecond.innerHTML = second + '&nbsp  S '
                         if (second == 0) {
-                            second = 60
+                            second = 4
                             minute -= 1
                             if (minute == -1) {
                                 clearInterval(myInterval)
@@ -762,17 +817,14 @@ require '../partials/_db-connect.php';
                                     }
                                 })
                                 Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')).forEach((element, index) => {
-                                    if(! element.checked){
+                                    if (!element.checked) {
                                         abaWrong.push(index)
                                     }
                                 })
 
                                 abacusDom = abacus.innerHTML
                                 abacus.remove()
-                                visual.style.display = 'flex'
-
-                                vis()
-                                console.log('call vis')
+                                waitQuestion(1)
                                 return ''
 
                             }
@@ -783,10 +835,12 @@ require '../partials/_db-connect.php';
                 let visualMarks = 0
                 let visualDom = ''
                 let visWrong = []
+
                 function vis() {
-                    console.log('vis')
+                    visual.style.display = 'flex'
+
                     let minute = 2
-                    let second = 59
+                    let second = 3
                     countMinute.innerHTML = minute + ' M  &nbsp '
                     countSecond.innerHTML = second + '&nbsp  S'
 
@@ -795,24 +849,25 @@ require '../partials/_db-connect.php';
                         countMinute.innerHTML = minute + ' M &nbsp  '
                         countSecond.innerHTML = second + '&nbsp  S '
                         if (second == 0) {
-                            second = 60
+                            second = 4
                             minute -= 1
                             if (minute == -1) {
-                                Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual')).forEach(element => {
+                                Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')).forEach(element => {
                                     if (element.checked) {
                                         visualMarks += 1
                                     }
                                 })
-                                Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual')).forEach((element, index) => {
-                                    if(! element.checked){
+                                Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')).forEach((element, index) => {
+                                    if (!element.checked) {
                                         visWrong.push(index)
                                     }
                                 })
                                 visualDom = visual.innerHTML
-                                
+
                                 visual.remove()
 
-                                mul()
+                                waitQuestion(2)
+                                
                                 clearInterval(myInterval2)
                                 return ''
 
@@ -824,12 +879,13 @@ require '../partials/_db-connect.php';
                 let mulDom = ''
                 let mulDiv = document.getElementById('mul-div')
                 let mulWrong = []
+
                 function mul() {
                     mulDiv.style.display = 'flex'
 
                     console.log('mul')
                     let minute = 2
-                    let second = 59
+                    let second = 3
                     countMinute.innerHTML = minute + ' M  &nbsp '
                     countSecond.innerHTML = second + '&nbsp  S'
 
@@ -838,7 +894,7 @@ require '../partials/_db-connect.php';
                         countMinute.innerHTML = minute + ' M &nbsp  '
                         countSecond.innerHTML = second + '&nbsp  S '
                         if (second == 0) {
-                            second = 60
+                            second = 4
                             minute -= 1
                             if (minute == -1) {
                                 Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div')).forEach(element => {
@@ -847,14 +903,14 @@ require '../partials/_db-connect.php';
                                     }
                                 })
                                 Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div')).forEach((element, index) => {
-                                    if(! element.checked){
+                                    if (!element.checked) {
                                         mulWrong.push(index)
                                     }
                                 })
                                 mulDom = mulDiv.innerHTML
                                 mulDiv.remove()
-                                show_details()
                                 clearInterval(myInterval3)
+                                show_details()
                                 return ''
 
                             }
@@ -881,7 +937,7 @@ require '../partials/_db-connect.php';
                     document.getElementById('nav-visual').innerHTML = `
                     ${visualDom}
                     `
-                    Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual')).forEach(element => {
+                    Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')).forEach(element => {
                         element.click()
                     })
                     document.getElementById('nav-mul-div').innerHTML = `
@@ -896,15 +952,15 @@ require '../partials/_db-connect.php';
                         document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')[index].parentElement.parentElement.parentElement.offsetParent.style.padding = '10px 8px'
                     });
                     visWrong.forEach(index => {
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual')[index].parentElement.parentElement.parentElement.offsetParent.style.border = '2px solid red'
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual')[index].parentElement.parentElement.parentElement.offsetParent.style.padding = '10px 8px'
+                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')[index].parentElement.parentElement.parentElement.offsetParent.style.border = '2px solid red'
+                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')[index].parentElement.parentElement.parentElement.offsetParent.style.padding = '10px 8px'
                     });
                     mulWrong.forEach(index => {
                         document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div')[index].parentElement.parentElement.parentElement.offsetParent.style.border = '2px solid red'
                         document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div')[index].parentElement.parentElement.parentElement.offsetParent.style.padding = '10px 8px'
                     });
 
-                    
+
                     Array.from(document.getElementsByTagName('input')).forEach(element => {
                         element.setAttribute('disabled', '')
                     })
