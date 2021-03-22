@@ -238,8 +238,8 @@ include '../partials/_head.php';
 
                     </style>
                 </div>
-                <div class="q-changer" id="start-next-one" style="transform:scale(0); transition:all .5s; width: 100%; height:100%; top:0; left:0; position: fixed; display:flex; justify-content: center;  align-items: center;">
-                    <button class="btn btn-danger btn-lg ">Start Next Question</button>
+                <div class="q-changer" id="start-next-one"  style="transform:scale(0); transition:all .5s; width: 100%; height:100%; top:0; left:0; position: fixed; display:flex; justify-content: center;  align-items: center;">
+                    <button  id="start-next-one-btn"  class="btn btn-danger btn-lg ">Start Next Question</button>
                 </div>
                 <nav id="answers">
                     <div class="nav nav-tabs">
@@ -325,35 +325,9 @@ include '../partials/_head.php';
             </script>
 
             <script>
-                function waitQuestion(index) {
                     let nxtOne = document.getElementById('start-next-one')
-                    let second = 15
+                    let nxtOneBtn = document.getElementById('start-next-one-btn')
 
-                    let myInterval2 = setInterval(() => {
-                        second -= 1
-                        countMinute.innerHTML = '00 M &nbsp  '
-                        countSecond.innerHTML = second + '&nbsp  S '
-
-                    }, 1000);
-                    if (index == 1) {
-
-                        nxtOne.style.transform = 'scale(1)'
-                        nxtOne.addEventListener('click', () => {
-                            nxtOne.style.transform = 'scale(0)'
-                            clearInterval(myInterval2)
-
-                            vis()
-                            return ''
-                        })
-
-                        setTimeout(() => {
-                            nxtOne.style.transform = 'scale(0)'
-
-                            clearInterval(myInterval2)
-                            vis()
-                        }, 15000);
-                    }
-                }
                 document.getElementById('answers').style.display = 'none'
                 let abacus = document.getElementById('abacus')
                 let visual = document.getElementById('visual')
@@ -369,8 +343,8 @@ include '../partials/_head.php';
                 function ab() {
 
 
-                    let minute = 2
-                    let second = 3
+                    let minute = 4
+                    let second = 59
 
                     countMinute.innerHTML = minute + ' M &nbsp '
                     countSecond.innerHTML = second + '&nbsp S'
@@ -380,10 +354,9 @@ include '../partials/_head.php';
                         countMinute.innerHTML = minute + ' M &nbsp  '
                         countSecond.innerHTML = second + '&nbsp  S '
                         if (second == 0) {
-                            second = 4
+                            second = 60
                             minute -= 1
                             if (minute == -1) {
-                                clearInterval(myInterval)
                                 Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')).forEach(element => {
                                     if (element.checked) {
                                         abacusMarks += 1
@@ -398,7 +371,8 @@ include '../partials/_head.php';
                                 abacusDom = abacus.innerHTML
                                 abacus.remove()
 
-                                waitQuestion(1)
+                                clearInterval(myInterval)
+                                vis()
                                 console.log('call vis')
                                 return ''
 
@@ -412,9 +386,12 @@ include '../partials/_head.php';
                 let visWrong = []
 
                 function vis() {
-                    visual.style.display = 'flex'
+                    nxtOne.style.transform = 'scale(1)'
+                    nxtOneBtn.addEventListener('click', () =>{
+                        nxtOne.style.transform = 'scale(0)'
+                        visual.style.display = 'flex'
                     let minute = 2
-                    let second = 3
+                    let second = 59
                     countMinute.innerHTML = minute + ' M  &nbsp '
                     countSecond.innerHTML = second + '&nbsp  S'
 
@@ -423,7 +400,7 @@ include '../partials/_head.php';
                         countMinute.innerHTML = minute + ' M &nbsp  '
                         countSecond.innerHTML = second + '&nbsp  S '
                         if (second == 0) {
-                            second = 4
+                            second = 60
                             minute -= 1
                             if (minute == -1) {
                                 Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')).forEach(element => {
@@ -441,13 +418,18 @@ include '../partials/_head.php';
                                 visual.remove()
 
 
-                                show_details()
                                 clearInterval(myInterval2)
-                                return ''
+                                show_details()
+                                return null
 
                             }
                         }
-                    }, 1000);
+                    }, 100);
+                    })
+
+                    
+
+
                 }
 
 

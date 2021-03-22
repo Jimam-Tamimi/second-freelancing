@@ -65,7 +65,7 @@ $pages["gm-c.php"] = "GM C";
                             echo '
                             <li class="nav-item">
                             <a href="/levels/'.$key.'" class="nav-link ';
-                            if($value == $cPage){
+                            if($value == $title){
                                 echo 'active';
                             }
                             echo ' ">
