@@ -9,7 +9,7 @@ require '../partials/_db-connect.php';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>Level 6</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -361,9 +361,10 @@ require '../partials/_db-connect.php';
                                                     <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
                                                     <label class="form-check-label " for="question-' . $i . '-a"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
                                                     <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
-                                                    <label class="form-check-label" for="question-' . $i . '-a"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                    <label class="form-check-label" for="question-' . $i . '-a"> ' . $wAns . '';
                             }
                             echo '
                                             </label>
@@ -373,13 +374,15 @@ require '../partials/_db-connect.php';
                                         <div class="form-check">
                                             ';
                             if ($num == 2) {
+                                
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
-                                                <label class="form-check-label " for="question-' . $i . '-b"> ' . $row['answer'] . '';
+                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                <label class="form-check-label " for="question-' . $i . '-b"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
                                                 <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
-                                                <label class="form-check-label" for="question-' . $i . '-b"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <label class="form-check-label" for="question-' . $i . '-b"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -394,9 +397,10 @@ require '../partials/_db-connect.php';
                                                 <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
                                                 <label class="form-check-label " for="question-' . $i . '-c"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
                                                 <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
-                                                <label class="form-check-label" for="question-' . $i . '-c"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <label class="form-check-label" for="question-' . $i . '-c"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -409,9 +413,10 @@ require '../partials/_db-connect.php';
                                                 <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
                                                 <label class="form-check-label " for="question-' . $i . '-d"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
                                                 <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
-                                                <label class="form-check-label" for="question-' . $i . '-d"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <label class="form-check-label" for="question-' . $i . '-d"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -450,12 +455,13 @@ require '../partials/_db-connect.php';
                                                 ';
                             if ($num == 1) {
                                 echo '                                        
-                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-a-visual">
-                                                    <label class="form-check-label " for="question-' . $i . '-a-visual"> ' . $row['answer'] . '';
+                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
+                                                    <label class="form-check-label " for="question-' . $i . '-a"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                    <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-a-visual">
-                                                    <label class="form-check-label" for="question-' . $i . '-a-visual"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                    <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
+                                                    <label class="form-check-label" for="question-' . $i . '-a"> ' . $wAns . '';
                             }
                             echo '
                                             </label>
@@ -465,13 +471,15 @@ require '../partials/_db-connect.php';
                                         <div class="form-check">
                                             ';
                             if ($num == 2) {
+                                
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-b-visual">
-                                                <label class="form-check-label " for="question-' . $i . '-b-visual"> ' . $row['answer'] . '';
+                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                <label class="form-check-label " for="question-' . $i . '-b"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-b-visual">
-                                                <label class="form-check-label" for="question-' . $i . '-b-visual"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                                <label class="form-check-label" for="question-' . $i . '-b"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -483,12 +491,13 @@ require '../partials/_db-connect.php';
                                             ';
                             if ($num == 3) {
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-c-visual">
-                                                <label class="form-check-label " for="question-' . $i . '-c-visual"> ' . $row['answer'] . '';
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
+                                                <label class="form-check-label " for="question-' . $i . '-c"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-c-visual">
-                                                <label class="form-check-label" for="question-' . $i . '-c-visual"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
+                                                <label class="form-check-label" for="question-' . $i . '-c"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -498,12 +507,13 @@ require '../partials/_db-connect.php';
                                             ';
                             if ($num == 4) {
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-d-visual">
-                                                <label class="form-check-label " for="question-' . $i . '-d-visual"> ' . $row['answer'] . '';
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
+                                                <label class="form-check-label " for="question-' . $i . '-d"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-d-visual">
-                                                <label class="form-check-label" for="question-' . $i . '-d-visual"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
+                                                <label class="form-check-label" for="question-' . $i . '-d"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -534,7 +544,7 @@ require '../partials/_db-connect.php';
 
                             echo ' 
                                 <form class="question my-3 col-md-6">
-                                <h4><b>' . $i . ') ' .  $row['question'] . ' = ? (' . $row['type'] . ')</b></h4>
+                                <h4><b>' . $i . ') ' . $row['question'] . ' = ? (' . $row['type'] . ')</b></h4>
                                 <div class="row ml-5 my-3">
                                     <div class="col-md-2">
                                         <div class="form-check">
@@ -542,12 +552,13 @@ require '../partials/_db-connect.php';
                                                 ';
                             if ($num == 1) {
                                 echo '                                        
-                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-a-mul-div">
-                                                    <label class="form-check-label " for="question-' . $i . '-a-mul-div"> ' . $row['answer'] . '';
+                                                    <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
+                                                    <label class="form-check-label " for="question-' . $i . '-a"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                    <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-a-mul-divl">
-                                                    <label class="form-check-label" for="question-' . $i . '-a-mul-div"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                    <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
+                                                    <label class="form-check-label" for="question-' . $i . '-a"> ' . $wAns . '';
                             }
                             echo '
                                             </label>
@@ -557,13 +568,15 @@ require '../partials/_db-connect.php';
                                         <div class="form-check">
                                             ';
                             if ($num == 2) {
+                                
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-b-mul-div">
-                                                <label class="form-check-label " for="question-' . $i . '-b-mul-div"> ' . $row['answer'] . '';
+                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                <label class="form-check-label " for="question-' . $i . '-b"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-visual" type="radio" name="exampleRadios" id="question-' . $i . '-b-mul-div">
-                                                <label class="form-check-label" for="question-' . $i . '-b-mul-div"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
+                                                <label class="form-check-label" for="question-' . $i . '-b"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -575,12 +588,13 @@ require '../partials/_db-connect.php';
                                             ';
                             if ($num == 3) {
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-c-mul-div">
-                                                <label class="form-check-label " for="question-' . $i . '-c-mul-div"> ' . $row['answer'] . '';
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
+                                                <label class="form-check-label " for="question-' . $i . '-c"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-c-mul-div">
-                                                <label class="form-check-label" for="question-' . $i . '-c-mul-div"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
+                                                <label class="form-check-label" for="question-' . $i . '-c"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -590,12 +604,13 @@ require '../partials/_db-connect.php';
                                             ';
                             if ($num == 4) {
                                 echo '                                        
-                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-d-mul-div">
-                                                <label class="form-check-label " for="question-' . $i . '-d-mul-div"> ' . $row['answer'] . '';
+                                                <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
+                                                <label class="form-check-label " for="question-' . $i . '-d"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
-                                                <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-mul-div" type="radio" name="exampleRadios" id="question-' . $i . '-d-mul-div">
-                                                <label class="form-check-label" for="question-' . $i . '-d-mul-div"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
+                                                <label class="form-check-label" for="question-' . $i . '-d"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -907,10 +922,7 @@ require '../partials/_db-connect.php';
             <!-- /.content-header -->
         </div>
         <!-- /.content-wrapper -->
-        <footer id="footer" class="main-footer">
-            <strong>Copyright &copy; 2021-2026 <a href="https://adminlte.io">Jimam Tamimi</a>.</strong>
-            All rights reserved.
-        </footer>
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

@@ -1,6 +1,9 @@
 <?php
 
 session_start();
+if(isset($_SESSION['login']) &&  $_SESSION['login'] == true && isset($_SESSION['superuser']) && $_SESSION['superuser'] == true){
+  header('location: /upload.php');
+}
 
 
 
@@ -73,7 +76,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['login'] == 'login'){
 <div style="max-width: 380px !important;" class="container">
   <form action="superuser.php" method="POST">
     <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+    <h1 class="h3 mb-3 fw-normal">Please Login To Be A Super User</h1>
     <input type="hidden" value="login" name="login">
     
     <label for="username" class="visually-hidden">User name</label>

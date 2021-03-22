@@ -217,7 +217,7 @@ require '../partials/_db-connect.php';
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/levels/1.php" class="nav-link ">
+                            <a href="/levels/1.php" class="nav-link active">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Level 1
@@ -225,7 +225,7 @@ require '../partials/_db-connect.php';
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/levels/2.php" class="nav-link active">
+                            <a href="/levels/2.php" class="nav-link ">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Level 2
@@ -320,12 +320,12 @@ require '../partials/_db-connect.php';
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Level 2</h1>
+                            <h1 class="m-0">Level 1</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a class="text-danger" href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a> / Level 2</a></li>
+                                <li class="breadcrumb-item"><a> / Level 1</a></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -335,7 +335,7 @@ require '../partials/_db-connect.php';
             <div id="result" class="container my-cont row m-0 ">
                 <div id="abacus" class="row">
                     <?php
-                    $sql = "SELECT * FROM level_2 WHERE `type` = 'abacus'  ORDER BY rand()";
+                    $sql = "SELECT * FROM level_1 WHERE `type` = 'abacus'  ORDER BY rand()";
                     $result = mysqli_query($conn, $sql);
 
                     if ($result) {
@@ -359,9 +359,10 @@ require '../partials/_db-connect.php';
                                                     <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
                                                     <label class="form-check-label " for="question-' . $i . '-a"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
                                                     <input class="form-check-input rh_ireh-gher-ihgr_he_ihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-a">
-                                                    <label class="form-check-label" for="question-' . $i . '-a"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                    <label class="form-check-label" for="question-' . $i . '-a"> ' . $wAns . '';
                             }
                             echo '
                                             </label>
@@ -371,13 +372,16 @@ require '../partials/_db-connect.php';
                                         <div class="form-check">
                                             ';
                             if ($num == 2) {
+
                                 echo '                                        
                                                 <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
                                                 <label class="form-check-label " for="question-' . $i . '-b"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
+
                                 echo '                                        
                                                 <input class="form-check-input rhir-ehgh_er-ihgr_heihr_ehf-ir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-b">
-                                                <label class="form-check-label" for="question-' . $i . '-b"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <label class="form-check-label" for="question-' . $i . '-b"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -392,9 +396,10 @@ require '../partials/_db-connect.php';
                                                 <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
                                                 <label class="form-check-label " for="question-' . $i . '-c"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
                                                 <input class="form-check-input rhirehg-herihg_rhei_hr-ehfirhi_fhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-c">
-                                                <label class="form-check-label" for="question-' . $i . '-c"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <label class="form-check-label" for="question-' . $i . '-c"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -407,9 +412,10 @@ require '../partials/_db-connect.php';
                                                 <input class="form-check-input rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
                                                 <label class="form-check-label " for="question-' . $i . '-d"> ' . $row['answer'] . '';
                             } else {
+                                $wAns = (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5);
                                 echo '                                        
                                                 <input class="form-check-input rh_irehg-herih-gufu_ygr-ehfirg_ierfhi-abacus" type="radio" name="exampleRadios" id="question-' . $i . '-d">
-                                                <label class="form-check-label" for="question-' . $i . '-d"> ' . (int)$row['answer'] + rand(-10, (int)$row['answer'] + 5) . '';
+                                                <label class="form-check-label" for="question-' . $i . '-d"> ' . $wAns . '';
                             }
                             echo '                                        </label>
                                         </div>
@@ -507,8 +513,8 @@ require '../partials/_db-connect.php';
                 function ab() {
 
 
-                    let minute = 2
-                    let second = 3
+                    let minute = 4
+                    let second = 59
 
                     countMinute.innerHTML = minute + ' M &nbsp '
                     countSecond.innerHTML = second + '&nbsp S'
@@ -518,7 +524,7 @@ require '../partials/_db-connect.php';
                         countMinute.innerHTML = minute + ' M &nbsp  '
                         countSecond.innerHTML = second + '&nbsp  S '
                         if (second == 0) {
-                            second = 4
+                            second = 60
                             minute -= 1
                             if (minute == -1) {
                                 Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')).forEach(element => {
@@ -577,10 +583,7 @@ require '../partials/_db-connect.php';
             <!-- /.content-header -->
         </div>
         <!-- /.content-wrapper -->
-        <footer id="footer" class="main-footer">
-            <strong>Copyright &copy; 2021-2026 <a href="https://adminlte.io">Jimam Tamimi</a>.</strong>
-            All rights reserved.
-        </footer>
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

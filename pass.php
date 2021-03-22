@@ -7,7 +7,29 @@ if(!isset($_SESSION['login']) ||  $_SESSION['login'] != true || !isset($_SESSION
 }
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload']) == 'Upload') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change']) == 'Change') {
+    $type = $_POST['type'];
+    if($type == 'user'){
+        $newpass = $_POST['new-password'];
+        echo $newpass;
+        $sql = "UPDATE `pass` SET `pass`= '" . $newpass . "'";
+        $result = mysqli_query($conn, $sql);
+        if($result){
+            $success = true;
+        }
+    }
+    elseif($type == 'superuser'){
+        $newpass = $_POST['new-password'];
+        echo $newpass;
+
+        $sql = "UPDATE `pass` SET `super_user`='" . $newpass . "'";
+        $result = mysqli_query($conn, $sql);
+        if($result){
+            $success = true;
+        }
+    }
+    
+
     $level = $_POST['level'];
     $sql = "INSERT INTO level_" . $level ." (`type`, `question`, `answer`) VALUES " . $_POST['question'];
     if(substr($sql, -1) == ','){
@@ -356,12 +378,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload']) == 'Upload')
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Super User</h1>
+                            <h1 class="m-0">Change Password</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a> / Super User</a></li>
+                                <li class="breadcrumb-item"><a> / Change Password</a></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -369,33 +391,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['upload']) == 'Upload')
             </div>
 
             <div class="container">
-                <form action="upload.php" method="POST" enctype="multipart/form-data">
+                <form action="pass.php" method="POST" >
                     <div class="mb-3">
                         <label class="form-label">Select Level</label>
-                        <select required name="level" class="form-select" aria-label="Default select example">
+                        <select required name="type" class="form-select" aria-label="Default select example">
                             <option selected disabled>Select Level</option>
-                            <option value="1">Level 1</option>
-                            <option value="2">Level 2</option>
-                            <option value="3">Level 3</option>
-                            <option value="4">Level 4</option>
-                            <option value="5">Level 5</option>
-                            <option value="6">Level 6</option>
-                            <option value="7">Level 7</option>
-                            <option value="8">Level 8</option>
-                            <option value="9">Level 9</option>
-                            <option value="10">Level 10</option>
-                            <option value="11">Level 11</option>
+                            <option value="user">User Password</option>
+                            <option value="superuser">Super User Password</option>
+
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label"></label>
-                        <div class="form-floating">
-                            <textarea name="question" class="form-control" placeholder="Enter Your Questions" id="floatingTextarea2" style="height: 500px"></textarea>
-                            <label for="floatingTextarea2">Enter Your Questions</label>
-                          </div>
-                    </div>
 
-                    <input type="submit" name="upload" value="Upload" class="btn btn-primary mb-3" />
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">New Password</label> 
+                    <input name="new-password" type="password" class="form-control" id="exampleInputPassword1" required>
+                  </div>
+
+                    <input type="submit" name="change" value="Change" class="btn btn-primary mb-3" />
                 </form>
             </div>
 
