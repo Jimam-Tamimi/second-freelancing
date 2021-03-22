@@ -1,4 +1,13 @@
+<?php
 
+$abaMinute = 4;
+$abaSecond = 59;
+$visMinute = 3;
+$visSecond = 59;
+$mulMinute = 2;
+$mulSecond = 59;
+
+?>
             <div id="result" class="container my-cont row m-0 ">
                 <div id="abacus" class="row">
                     <?php

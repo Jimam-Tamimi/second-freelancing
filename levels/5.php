@@ -1,6 +1,6 @@
 <?php
 require '../partials/_db-connect.php';
-$title = 'Level 4'
+$title = 'Level 5'
 
 ?>
 <!DOCTYPE html>
@@ -36,13 +36,8 @@ include '../partials/_head.php';
             
             include '../partials/_content-header.php';
 
-            $level = 'level_4';
-            $abaMinute = 2;
-            $abaSecond = 3;
-            $visMinute = 2;
-            $visSecond = 3;
-            $mulMinute = 2;
-            $mulSecond = 3;
+            $level = 'level_5';
+
             
             require '../partials/_main.php';
             
