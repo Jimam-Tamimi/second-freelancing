@@ -1,5 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
-// require 'partials/_db-connect.php';
+
+
+require 'partials/_db-connect.php';
+$title = 'Level 1';
+
 
 session_start();
 if(!isset($_SESSION['login']) || $_SESSION['login']  != true){
@@ -7,13 +14,14 @@ if(!isset($_SESSION['login']) || $_SESSION['login']  != true){
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title><?php
+    echo $title;
+    
+    ?></title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -135,219 +143,50 @@ if(!isset($_SESSION['login']) || $_SESSION['login']  != true){
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light fixed-top ">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
-                </li>
-            </ul>
+        <?php
 
-            <!-- SEARCH FORM
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form> -->
+        include 'partials/_nav.php';
 
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        ?>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-danger elevation-4">
-            <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <!-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8"> -->
-                <span class="brand-text font-weight-light">Questions</span>
-            </a>
+        <?php
+        include 'partials/_slidebar.php';
 
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <!-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> -->
-                    </div>
-                    <div class="info">
-                        <a class="d-block">Student</a>
-                    </div>
-                </div>
-
-                <p style="color: white;">SidebarSearch Form</p>
-                <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sidebar Menu -->
-                <!-- Sidebar Menu -->
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
-                            <a href="/superuser" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt "></i>
-                                <p>
-                                    DashBoard
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/1.php" class="nav-link ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Level 1
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/2.php" class="nav-link ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Level 2
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/3.php" class="nav-link">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Level 3
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/4.php" class="nav-link  ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Level 4
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/5.php" class="nav-link ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Level 5
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/6.php" class="nav-link   ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Level 6
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/7.php" class="nav-link       ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Level 7
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/8.php" class="nav-link  ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    Level 8
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/gm-a.php" class="nav-link     ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    GM A
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/gm-b.php" class="nav-link  ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    GM B
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/levels/gm-c.php" class="nav-link  ">
-                                <i class="nav-icon far fa-calendar-alt"></i>
-                                <p>
-                                    GM C
-                                </p>
-                            </a>
-                        </li>
-
-
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
-        </aside>
+        ?>
 
         <!-- Content Wrapper. Contains page content -->
         <div style="margin-top: 57px;" class="content-wrapper">
 
+            <?php
 
-        
+            include 'partials/_content-header.php';
+
+            ?>
+
+        <!-- Content Wrapper. Contains page content -->
             <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Home</h1>
-                        </div><!-- /.col -->
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            </ol>
-                        </div><!-- /.col -->
-                    </div><!-- /.row -->
-                </div><!-- /.container-fluid -->
+
+            <div class=" mx-4">
+            <h4>Welcome to the Brainwave online practice sessions.</h4>
+            <ol>
+            <li><p>Please click on the name of the level , you are currently participating for the exam.</p></li>
+            <li><p>As soon as you click on the level name, the timer starts.</p></li>
+            <li><p>Click on the answers which you deem correct.</p></li>
+            <li><p>After the allotted time for abacus, the visual round starts and after that the Multiplication and Division round starts for higher levels.</p></li>
+            <li><p>Once the entire time is over, your score in the individual rounds are shown.</p></li>
+            <li><p>You can click on the relevant tabs and see which questions you have gone wrong.</p></li>
+            <li><p>The scores aren’t stored in a database.</p></li>
+            <li><p>This is purely for online practice before your exams.</p></li>
+            </ol>
+
             </div>
-
-            
-            <script src="../js/jquery.min.js"></script>
-
-
 
             <!-- /.content-header -->
         </div>
         <!-- /.content-wrapper -->
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
@@ -357,15 +196,11 @@ if(!isset($_SESSION['login']) || $_SESSION['login']  != true){
     </div>
     <!-- ./wrapper -->
 
-    <!-- jQuery -->
-
-    <!-- jQuery UI 1.11.4 -->
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-
     <script>
         // $.widget.bridge('uibutton', $.ui.button)
     </script> <!-- Bootstrap 4 -->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <!-- ChartJS -->
     <script src="js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
