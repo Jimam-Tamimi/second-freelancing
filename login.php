@@ -1,19 +1,27 @@
 <?php
+require 'partials/_db-connect.php';
 
 session_start();
-if(isset($_SESSION['login']) ||  $_SESSION['login'] == true){
+if(isset($_SESSION['login']) &&  $_SESSION['login'] == true){
   header('location: /');
 }
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['login'] == 'login'){
-  $username = 'admin';
-  $password = 'admin';
-  if($_POST['username'] == $username && $_POST['password'] == $password){
-    $_SESSION['login'] = true;
-    header('location: /');
-    
+  $sql = "SELECT `pass` FROM `pass`";
+  $result = mysqli_query($conn, $sql);
+  if($result){
+    $row = mysqli_fetch_assoc($result);
+    $username = 'admin';
+    $password = $row['pass'];
+    if($_POST['username'] == $username && $_POST['password'] == $password){
+      $_SESSION['login'] = true;
+      header('location: /');
+      
+    }
   }
+
+
 }
 
 ?>

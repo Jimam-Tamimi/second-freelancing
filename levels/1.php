@@ -8,6 +8,10 @@ require '../partials/_db-connect.php';
 $title = 'Level 1';
 
 
+session_start();
+if(!isset($_SESSION['login']) || $_SESSION['login']  != true){
+    header('location: /login.php');
+}
 include '../partials/_head.php';
 
 ?>
@@ -60,7 +64,7 @@ include '../partials/_head.php';
 
                             echo ' 
                                 <form class="question my-3 col-md-6">
-                                <h4><b>' . $i . ') ' . $row['question'] . ' = ? (' . $row['type'] . ')</b></h4>
+                                <h4><b>' . $i . ') ' . $row['question'] . ' = </b></h4>
                                 <div class="row ml-5 my-3">
                                     <div class="col-md-2">
                                         <div class="form-check">
@@ -277,8 +281,7 @@ include '../partials/_head.php';
                     })
 
                     abaWrong.forEach(index => {
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')[index].parentElement.parentElement.parentElement.offsetParent.style.border = '2px solid red'
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')[index].parentElement.parentElement.parentElement.offsetParent.style.padding = '10px 8px'
+                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')[index].parentElement.parentElement.parentElement.parentElement.remove()
                     });
                    
                     

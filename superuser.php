@@ -1,15 +1,21 @@
 <?php
-
+require 'partials/_db-connect.php';
 session_start();
 if(isset($_SESSION['login']) &&  $_SESSION['login'] == true && isset($_SESSION['superuser']) && $_SESSION['superuser'] == true){
-  header('location: /upload.php');
+  header('location: /update.php');
 }
 
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['login'] == 'login'){
-  $username = 'superuser';
-  $password = 'superuser';
+  $sql = "SELECT `superuser_pass` FROM `pass`";
+  $result = mysqli_query($conn, $sql);
+  if($result){
+    $row = mysqli_fetch_assoc($result);
+    $username = 'superuser';
+    $password = $row['superuser_pass'];
+
+  }
   if($_POST['username'] == $username && $_POST['password'] == $password){
     $_SESSION['superuser'] = true;
     $_SESSION['login'] = true;

@@ -18,13 +18,13 @@ $mulSecond = 59;
                         $i = 1;
                         $num_rows = mysqli_num_rows($result);
 
-                        echo '<h2  >Abacus Questions (' . $num_rows . ') </h2>';
+                        echo '<h2  >Abacus Round (' . $num_rows . ') </h2>';
                         while ($row = mysqli_fetch_assoc($result)) {
                             $num = rand(1, 4);
 
                             echo ' 
                                 <form class="question my-3 col-md-6">
-                                <h4><b>' . $i . ') ' . $row['question'] . ' = ? (' . $row['type'] . ')</b></h4>
+                                <h4><b>' . $i . ') ' . $row['question'] . ' =</b></h4>
                                 <div class="row ml-5 my-3">
                                     <div class="col-md-2">
                                         <div class="form-check">
@@ -115,13 +115,13 @@ $mulSecond = 59;
                         $i = 1;
                         $num_rows = mysqli_num_rows($result);
 
-                        echo '<h2  >Visual Questions (' . $num_rows . ') </h2>';
+                        echo '<h2  >Visual Round (' . $num_rows . ') </h2>';
                         while ($row = mysqli_fetch_assoc($result)) {
                             $num = rand(1, 4);
 
                             echo ' 
                                 <form class="question my-3 col-md-6">
-                                <h4><b>' . $i . ') ' . $row['question'] . ' = ? (' . $row['type'] . ')</b></h4>
+                                <h4><b>' . $i . ') ' . $row['question'] . ' =</b></h4>
                                 <div class="row ml-5 my-3">
                                     <div class="col-md-2">
                                         <div class="form-check">
@@ -218,7 +218,7 @@ $mulSecond = 59;
 
                             echo ' 
                                 <form class="question my-3 col-md-6">
-                                <h4><b>' . $i . ') ' . $row['question'] . ' = ? (' . $row['type'] . ')</b></h4>
+                                <h4><b>' . $i . ') ' . $row['question'] . ' =</b></h4>
                                 <div class="row ml-5 my-3">
                                     <div class="col-md-2">
                                         <div class="form-check">
@@ -457,7 +457,7 @@ $mulSecond = 59;
                                     }
                                 })
                                 Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')).forEach((element, index) => {
-                                    if (!element.checked) {
+                                    if (element.checked) {
                                         abaWrong.push(index)
                                     }
                                 })
@@ -478,6 +478,8 @@ $mulSecond = 59;
 
                 function vis() {
                     nxtOne.style.transform = 'scale(1)'
+                    nxtOneBtn.innerHTML = 'Go To Visual Round'
+
                     nxtOneBtn.addEventListener('click', () => {
                         nxtOne.style.transform = 'scale(0)'
                         visual.style.display = 'flex'
@@ -508,7 +510,7 @@ $mulSecond = 59;
                                         }
                                     })
                                     Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')).forEach((element, index) => {
-                                        if (!element.checked) {
+                                        if (element.checked) {
                                             visWrong.push(index)
                                         }
                                     })
@@ -532,6 +534,7 @@ $mulSecond = 59;
                 let mulWrong = []
 
                 function mul() {
+                    nxtOneBtn.innerHTML = 'Go To Multiplication / Division Round'
                     nxtOne.style.transform = 'scale(1)'
 
                     nxtOneBtn.addEventListener('click', () => {
@@ -564,7 +567,7 @@ $mulSecond = 59;
                                         }
                                     })
                                     Array.from(document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div')).forEach((element, index) => {
-                                        if (!element.checked) {
+                                        if (element.checked) {
                                             mulWrong.push(index)
                                         }
                                     })
@@ -613,16 +616,13 @@ $mulSecond = 59;
                     })
 
                     abaWrong.forEach(index => {
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')[index].parentElement.parentElement.parentElement.offsetParent.style.border = '2px solid red'
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')[index].parentElement.parentElement.parentElement.offsetParent.style.padding = '10px 8px'
+                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-abacus')[index].parentElement.parentElement.parentElement.parentElement.remove()
                     });
                     visWrong.forEach(index => {
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')[index].parentElement.parentElement.parentElement.offsetParent.style.border = '2px solid red'
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')[index].parentElement.parentElement.parentElement.offsetParent.style.padding = '10px 8px'
+                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihr45e-hfir_hiifhi-visual')[index].parentElement.parentElement.parentElement.parentElement.remove()
                     });
                     mulWrong.forEach(index => {
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div')[index].parentElement.parentElement.parentElement.offsetParent.style.border = '2px solid red'
-                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div')[index].parentElement.parentElement.parentElement.offsetParent.style.padding = '10px 8px'
+                        document.getElementsByClassName('rhireh-gher_ihgr_he-ihre-hfir_hifhi-mul-div')[index].parentElement.parentElement.parentElement.parentElement.remove()
                     });
 
 

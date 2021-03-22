@@ -1,6 +1,11 @@
 <?php
 require '../partials/_db-connect.php';
-$title = 'GM B'
+
+session_start();
+if(!isset($_SESSION['login']) || $_SESSION['login']  != true){
+    header('location: /login.php');
+}
+$title = 'GM B';
 
 ?>
 <!DOCTYPE html>
